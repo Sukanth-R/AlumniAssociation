@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Portal</title>
+    <style>
+        /* Base styles */
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        /* Header and Navbar styles */
+        
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #002366;
+            /* Royal Blue */
+        }
+        
+        .logo {
+            margin-right: 40px;
+        }
+        
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #FFD700;
+            /* Gold */
+        }
+        
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #002366;
+            overflow: hidden;
+            display: flex;
+        }
+        
+        .navbar li {
+            float: left;
+        }
+        
+        .navbar li a,
+        .dropbtn {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar li a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: #FFD700;
+            /* Gold */
+            color: #002366;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #002366;
+            /* Royal Blue */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: #FFD700;
+            /* Gold */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #001a4d;
+            /* Darker shade of Royal Blue */
+            color: #FFD700;
+            /* Keeps text gold on hover */
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        /* Donation Container */
+        
+        .donation-container {
+            background-color: #fff;
+            padding: 40px;
+            margin: 20px auto;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+        
+        .donation-container h1 {
+            color: #002366;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .donation-container p {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .donation-container .btn {
+            background-color: #FFD700;
+            /* Gold */
+            color: #002366;
+            font-weight: bold;
+            padding: 14px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .donation-container .btn:hover {
+            background-color: #002366;
+            color: #FFD700;
+        }
+        /* Leaderboard and Points Info styles */
+        
+        .leaderboard-section {
+            display: flex;
+            padding: 40px;
+            background-color: #fff;
+            justify-content: space-around;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+        }
+        
+        .leaderboard,
+        .points-info {
+            flex: 1;
+            padding: 20px;
+        }
+        
+        .leaderboard h2,
+        .points-info h2 {
+            color: #002366;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        #leaderboardChart {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .points-info table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .points-info th,
+        .points-info td {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        .points-info th {
+            background-color: #002366;
+            color: #FFD700;
+        }
+        
+        .points-info td {
+            background-color: #f4f4f4;
+            color: #002366;
+        }
+        
+        .donation-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Center-align the cards horizontally */
+            justify-content: center;
+            /* Center-align the cards vertically (if needed) */
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        .donation-card {
+            background-color: #FFD700;
+            color: #002366;
+            padding: 20px;
+            margin: 20px 0;
+            /* Adds space between the cards */
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .donation-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Alumni Portal</h1>
+            </div>
+            <nav>
+                <ul class="navbar">
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Connect</a>
+                        <div class="dropdown-content">
+                            <a href="caro.html">Alumni Albums</a>
+                            <a href="mentor-program.html">Alumni Mentor Program</a>
+                            <a href="http://localhost:3000/jobb.html">Jobs</a>
+                            <a href="http://localhost:3001/intern.html">Internship</a>
+                            <a href="stories.html">Stories</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Events</a>
+                        <div class="dropdown-content">
+                            <a href="event.html">All Events</a>
+                            <a href="event_calender.html">Calendar of Events</a>
+                            <a href="reu.html">Reunions</a>
+                            <a href="specialweb.html">Special Webinars</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Others</a>
+                        <div class="dropdown-content">
+                            <a href="about.html">About the Association</a>
+                            <a href="alumini_needs.html">Help</a>
+                            <a href="#">Photo Gallery</a>
+                            <a href="Donation.html">Donation Portal</a>
+                        </div>
+                    </li>
+                    <li><a href="http://127.0.0.1:5000/">Ask AI for help</a></li>
+                    <li>
+                        <a href="alumini_portal1.html" class="login-button">HOME</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="donation-container">
+        <div class="donation-card">
+            <h1>Donation</h1>
+            <p>Donate For our College</p>
+            <button id="rzp-button1" class="btn btn-outline-dark btn-lg">Donate</button>
+        </div>
+        <div class="donation-card">
+            <h1>College Hackathon</h1>
+            <p>Support our annual hackathon</p>
+            <button id="rzp-button2" class="btn btn-outline-dark btn-lg">Donate</button>
+        </div>
+        <div class="donation-card">
+            <h1>Top 5 Students Scholarship</h1>
+            <p>Contribute to the scholarship fund</p>
+            <button id="rzp-button3" class="btn btn-outline-dark btn-lg">Donate</button>
+        </div>
+        <div class="donation-card">
+            <h1>College Trust</h1>
+            <p>Donate to our college trust</p>
+            <button id="rzp-button4" class="btn btn-outline-dark btn-lg">Donate</button>
+        </div>
+    </div>
+
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        var options1 = {
+            "key": "rzp_test_LgeTONMHbSUmnn",
+            "amount": 199 * 100,
+            "currency": "INR",
+            "name": "Your College Name",
+            "description": "Donate to our college",
+            // Other properties...
+        };
+
+        var options2 = {
+            "key": "rzp_test_LgeTONMHbSUmnn",
+            "amount": 499 * 100,
+            "currency": "INR",
+            "name": "Your College Name",
+            "description": "Support our annual hackathon",
+            // Other properties...
+        };
+
+        var options3 = {
+            "key": "rzp_test_LgeTONMHbSUmnn",
+            "amount": 999 * 100,
+            "currency": "INR",
+            "name": "Your College Name",
+            "description": "Top 5 Students Scholarship Fund",
+            // Other properties...
+        };
+
+        var options4 = {
+            "key": "rzp_test_LgeTONMHbSUmnn",
+            "amount": 1999 * 100,
+            "currency": "INR",
+            "name": "Your College Name",
+            "description": "Donate to our college trust",
+            // Other properties...
+        };
+
+        var rzp1 = new Razorpay(options1);
+        var rzp2 = new Razorpay(options2);
+        var rzp3 = new Razorpay(options3);
+        var rzp4 = new Razorpay(options4);
+
+        document.getElementById('rzp-button1').onclick = function(e) {
+            rzp1.open();
+            e.preventDefault();
+        };
+
+        document.getElementById('rzp-button2').onclick = function(e) {
+            rzp2.open();
+            e.preventDefault();
+        };
+
+        document.getElementById('rzp-button3').onclick = function(e) {
+            rzp3.open();
+            e.preventDefault();
+        };
+
+        document.getElementById('rzp-button4').onclick = function(e) {
+            rzp4.open();
+            e.preventDefault();
+        };
+    </script>
+</body>
+
+</html>

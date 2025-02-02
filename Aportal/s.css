@@ -1,0 +1,186 @@
+/* styles.css */
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #002673;
+    padding: 10px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    color: gold;
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    position: relative;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 5px 10px;
+    display: block;
+}
+
+header nav ul li a:hover,
+header nav ul li .dropbtn:focus {
+    background-color: gold;
+    color: #002673;
+}
+
+header nav ul .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+header nav ul .dropdown-content a {
+    color: #002673;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+header nav ul .dropdown-content a:hover {
+    background-color: #002673;
+    color: gold;
+}
+
+header nav ul .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+header .login-button {
+    background-color: gold;
+    color: #002673;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+header .login-button:hover {
+    background-color: white;
+    color: #002673;
+    border: 2px solid gold;
+}
+
+/* Reunion Event Styles */
+.mentor-program .header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #002673;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.reunion-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.reunion-card img {
+    width: 100%;
+    height: auto;
+}
+
+.reunion-card .p-3 {
+    padding: 20px;
+}
+
+.reunion-card h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #002673;
+}
+
+.reunion-card p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.reunion-card a.btn {
+    background-color: gold;
+    color: #002673;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.reunion-card a.btn:hover {
+    background-color: white;
+    color: #002673;
+    border: 2px solid gold;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    header nav ul li a {
+        padding: 10px;
+        text-align: left;
+        width: 100%;
+    }
+
+    .mentor-program .header h1 {
+        font-size: 24px;
+    }
+
+    .reunion-card h2 {
+        font-size: 18px;
+    }
+
+    .reunion-card p {
+        font-size: 14px;
+    }
+}

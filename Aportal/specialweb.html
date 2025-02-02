@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Special Webinars</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet"
+    />
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #002366; /* Royal Blue */
+        }
+
+        .logo {
+            margin-right: 40px;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #FFD700; /* Gold */
+        }
+
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #002366;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .navbar li {
+            float: left;
+        }
+
+        .navbar li a, .dropbtn {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar li a:hover, .dropdown:hover .dropbtn {
+            background-color: #FFD700; /* Gold */
+            color: #002366;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #273c64; /* Royal Blue */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #FFD700; /* Gold */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #001a4d; /* Darker shade of Royal Blue */
+            color: #FFD700; /* Keeps text gold on hover */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .login-button {
+            background-color: #FFD700; /* Gold */
+            color: #002366;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            padding: 14px 16px;
+        }
+
+        .login-button:hover {
+            background-color: #002366;
+            color: #FFD700;
+        }
+
+        .header {
+            background-color: #002366; /* Royal Blue */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .webinar-container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .post-webinar-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .post-webinar {
+            background-color: #ffd700; /* Gold */
+            color: #002366; /* Royal Blue */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .webinar-count {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .webinar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .webinar-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .webinar-card h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+            color: #002366; /* Royal Blue */
+        }
+
+        .webinar-card p {
+            margin: 5px 0;
+            color: #777;
+        }
+
+        .webinar-card a {
+            color: #ffd700; /* Gold */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .webinar-card .meeting-link {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #1a73e8; /* Google Meet blue */
+        }
+        body {
+            font-family: "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #002366; /* Royal Blue */
+        }
+
+        .logo {
+            margin-right: 40px;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #FFD700; /* Gold */
+        }
+
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #002366;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .navbar li {
+            float: left;
+        }
+
+        .navbar li a, .dropbtn {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar li a:hover, .dropdown:hover .dropbtn {
+            background-color: #FFD700; /* Gold */
+            color: #002366;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #273c64; /* Royal Blue */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #FFD700; /* Gold */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #001a4d; /* Darker shade of Royal Blue */
+            color: #FFD700; /* Keeps text gold on hover */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .login-button {
+            background-color: #FFD700; /* Gold */
+            color: #002366;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            padding: 14px 16px;
+        }
+
+        .login-button:hover {
+            background-color: #002366;
+            color: #FFD700;
+        }
+
+        .header {
+            background-color: #002366; /* Royal Blue */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+            font-size: 22px;
+            color: #002366; /* Royal Blue */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-group button {
+            background-color: #FFD700; /* Gold */
+            color: #002366;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .form-group button:hover {
+            background-color: #002366;
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar from Alumni Portal -->
+    <header></header>
+        <div class="container">
+            <div class="logo">
+                <h1>Alumni Portal</h1>
+            </div>
+            <nav>
+                <ul class="navbar">
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Connect</a>
+                        <div class="dropdown-content">
+                            <a href="caro.html">Alumni Albums</a>
+                            <a href="mentor-program.html">Alumni Mentor Program</a>
+                            <a href="http://localhost:3000/jobb.html">Jobs</a>
+                            <a href="http://localhost:3001/intern.html">Internship</a>
+                            <a href="stories.html">Stories</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Events</a>
+                        <div class="dropdown-content">
+                            <a href="event.html">All Events</a>
+                            <a href="event_calender.html">Calendar of Events</a>
+                            <a href="reu.html">Reunions</a>
+                            <a href="specialweb.html">Special Webinars</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Others</a>
+                        <div class="dropdown-content">
+                            <a href="about.html">About the Association</a>
+                            <a href="alumini_needs.html">Help</a>
+                            <a href="#">Photo Gallery</a>
+                            <a href="Donation.html">Donation Portal</a>
+                        </div>
+                    </li>
+                    <li><a href="http://127.0.0.1:5000/">Ask AI for help</a></li>
+                    <li>
+                        <a href="alumini_portal1.html" class="login-button">HOME</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="header"></div>
+        <h1 class="text-center" style="text-align: center;">Post a Special Webinar</h1>
+    </div>
+    <div class="form-container">
+        <h2>Webinar Details</h2>
+        <form method="POST">
+            <div class="form-group">
+                <input type="text" id="email" name="email" hidden>
+            </div>
+            <div class="form-group">
+                <label for="title">Webinar Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <div class="form-group">
+                <label for="fee">Fee:</label>
+                <input type="text" id="fee" name="fee" required>
+            </div>
+            <div class="form-group">
+                <label for="count">Intake Count:</label>
+                <input type="number" id="count" name="count" required>
+            </div>
+            <div class="form-group">
+                <label for="speaker">Speaker:</label>
+                <input type="text" id="speaker" name="speaker" required>
+            </div>
+            <div class="form-group">
+                <label for="platform">Platform:</label>
+                <select id="platform" name="platform" required>
+                    <option value="Zoom">Zoom</option>
+                    <option value="Google Meet">Google Meet</option>
+                    <option value="Microsoft Teams">Microsoft Teams</option>
+                    <option value="Webex">Webex</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="meeting-link">Meet Link:</label>
+                <input type="url" id="meeting-link" name="meeting-link">
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit"  formaction="http://localhost:9000/submit-webinar" >Submit Webinar</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Fetch user details and populate form fields
+        window.onload = function() {
+          fetch('/fetch-user-details')
+            .then(response => response.json())
+            .then(data => {
+              if (data.email) {
+                document.getElementById('email').value = data.email;
+              }
+              if (data.linkedin) {
+                document.getElementById('linkedin').value = data.linkedin;
+              }
+            })
+            .catch(error => console.error('Error fetching user details:', error));
+        };
+      </script>
+      
+      <!-- Bootstrap JS and dependencies -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reunion Events</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #002366; /* Royal Blue */
+        }
+        .logo {
+            margin-right: 40px;
+        }
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #FFD700; /* Gold */
+        }
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #002366;
+            overflow: hidden;
+            display: flex;
+        }
+        .navbar li {
+            float: left;
+        }
+        .navbar li a, .dropbtn {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar li a:hover, .dropdown:hover .dropbtn {
+            background-color: #FFD700; /* Gold */
+            color: #002366;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #223d6f; /* Royal Blue */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #FFD700; /* Gold */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .dropdown-content a:hover {
+            background-color: #001a4d; /* Darker shade of Royal Blue */
+            color: #FFD700; /* Keeps text gold on hover */
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .login-button {
+            background-color: #FFD700; /* Gold */
+            color: #002366;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            padding: 14px 16px;
+        }
+        .login-button:hover {
+            background-color: #002366;
+            color: #FFD700;
+        }
+        .reunion-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page-title {
+            font-size: 32px;
+            color: #002366;
+            margin-bottom: 20px;
+        }
+        .reunion-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .reunion-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .reunion-card img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+        .reunion-card h2 {
+            font-size: 22px;
+            color: #002366;
+            margin-bottom: 10px;
+        }
+        .reunion-card p {
+            color: #555;
+            margin: 5px 0;
+        }
+        .btn-warning {
+            display: inline-block;
+            background-color: #FFD700; /* Gold */
+            color: #002366;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .btn-warning:hover {
+            background-color: #002366;
+            color: #FFD700;
+        }
+        /* Modal Styles */
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        #rsvpModal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+        #rsvpModal h2 {
+            margin-top: 0;
+        }
+        #rsvpModal iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+        }
+        #countdown {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #closeModal {
+            background: #FFD700; /* Gold */
+            color: #002366;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        #closeModal:hover {
+            background-color: #002366;
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Alumni Portal</h1>
+            </div>
+            <nav>
+                <ul class="navbar">
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Connect</a>
+                        <div class="dropdown-content">
+                            <a href="caro.html">Alumni Albums</a>
+                            <a href="mentor-program.html">Alumni Mentor Program</a>
+                            <a href="http://localhost:3000/jobb.html">Jobs</a>
+                            <a href="http://localhost:3001/intern.html">Internship</a>
+                            <a href="stories.html">Stories</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Events</a>
+                        <div class="dropdown-content">
+                            <a href="event.html">All Events</a>
+                            <a href="event_calender.html">Calendar of Events</a>
+                            <a href="reu.html">Reunions</a>
+                            <a href="specialweb.html">Special Webinars</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Others</a>
+                        <div class="dropdown-content">
+                            <a href="about.html">About the Association</a>
+                            <a href="alumini_needs.html">Help</a>
+                            <a href="#">Photo Gallery</a>
+                            <a href="Donation.html">Donation Portal</a>
+                        </div>
+                    </li>
+                    <li><a href="http://127.0.0.1:5000/">Ask AI for help</a></li>
+                    <li>
+                        <a href="alumini_portal1.html" class="login-button">HOME</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="reunion-content">
+        <h1 class="page-title">Reunion Events</h1>
+        <div class="reunion-card">
+            <img src="https://goodhartphotographyva.com/wp-content/uploads/2016/01/Extended-Family-Reunion-Photographer.jpg" alt="10-Year Reunion">
+            <h2>10-Year Reunion</h2>
+            <p><strong>Date:</strong> December 15, 2024</p>
+            <p><strong>Location:</strong> New York City</p>
+            <p><strong>Details:</strong> Celebrate with your classmates and enjoy a night to remember.</p>
+            <a href="#" class="btn-warning" onclick="showRSVPPopup()">RSVP Now</a>
+        </div>
+
+        <div class="reunion-card">
+            <img src="https://img.freepik.com/free-vector/summertime-party-background_1048-910.jpg" alt="5-Year Reunion">
+            <h2>5-Year Reunion</h2>
+            <p><strong>Date:</strong> October 6, 2024</p>
+            <p><strong>Location:</strong> Los Angeles</p>
+            <p><strong>Details:</strong> Reconnect with old friends and relive the memories.</p>
+            <a href="#" class="btn-warning" onclick="showRSVPPopup()">RSVP Now</a>
+        </div>
+
+        <div class="reunion-card">
+            <img src="https://www.rhsreunion73.org/images/50th_Reunion_Pictures/PP_0.png" alt="15-Year Reunion">
+            <h2>15-Year Reunion</h2>
+            <p><strong>Date:</strong> January 20, 2025</p>
+            <p><strong>Location:</strong> Chicago</p>
+            <p><strong>Details:</strong> Join us for an evening of memories and networking.</p>
+            <a href="#" class="btn-warning" onclick="showRSVPPopup()">RSVP Now</a>
+        </div>
+    </main>
+
+    <!-- RSVP Modal -->
+    <div id="overlay"></div>
+    <div id="rsvpModal">
+        <button id="closeModal">Close</button>
+        <iframe id="pollFrame" src="" frameborder="0"></iframe>
+        <div id="countdown">Poll ends in: <span id="timer">24:00:00</span></div>
+    </div>
+    <script>
+        function showRSVPPopup() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('rsvpModal').style.display = 'block';
+            loadPoll();
+        }
+    
+        function loadPoll() {
+            var pollFrame = document.getElementById('pollFrame');
+            pollFrame.src = generatePollURL(); // Ensure this URL is correct
+    
+            // Start countdown timer
+            var endTime = new Date().getTime() + 24 * 60 * 60 * 1000; // 24 hours from now
+            var timerElement = document.getElementById('timer');
+    
+            function updateTimer() {
+                var now = new Date().getTime();
+                var distance = endTime - now;
+    
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+                timerElement.innerHTML = hours + ":" + minutes + ":" + seconds;
+    
+                if (distance < 0) {
+                    clearInterval(timerInterval);
+                    timerElement.innerHTML = "EXPIRED";
+                }
+            }
+    
+            var timerInterval = setInterval(updateTimer, 1000);
+        }
+    
+        function generatePollURL() {
+            // Ensure this URL is correct and accessible
+            return 'path/to/your/poll.html'; // Update to the correct path
+        }
+    
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('rsvpModal').style.display = 'none';
+        });
+    </script>
+    
+
+    
+
+</body>
+</html>
+
+            

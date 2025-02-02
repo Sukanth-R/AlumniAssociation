@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Profile Details Container */
+        .profile-details {
+            max-width:600px;
+            margin: auto;
+        }
+
+        /* Profile Header */
+        .profile-header {
+            background-color: #002366; /* Navy blue */
+            color: #FFD700; /* Gold */
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        /* Card styles */
+        .profile-card {
+            background-color: #FFD700; /* Gold */
+            color: #002366;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-card p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .profile-card strong {
+            display: block;
+            font-size: 18px;
+            color: #002366;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .profile-card {
+                padding: 15px;
+            }
+
+            .profile-card p {
+                font-size: 14px;
+            }
+
+            .profile-card strong {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-details">
+        <div class="profile-header">
+            <h1>User Profile</h1>
+        </div>
+
+        <div class="profile-card" id="userDetails">
+            <!-- User details will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script>
+        // Function to fetch and render user details
+        async function fetchUserDetails() {
+            try {
+                const response = await fetch('/fetch-user-details'); // Assuming your server endpoint
+                const user = await response.json();
+                
+                const userDetailsDiv = document.getElementById('userDetails');
+                userDetailsDiv.innerHTML = `
+                    <p><strong>Name:</strong> ${user.name}</p>
+                    <p><strong>Department:</strong> ${user.dept}</p>
+                    <p><strong>Year:</strong> ${user.year}</p>
+                    <p><strong>Email:</strong> ${user.email}</p>
+                    <p><strong>LinkedIn:</strong> ${user.linkedin}</p>
+                    <p><strong>Mobile:</strong> ${user.mobile}</p>
+                    <p><strong>EMIS:</strong> ${user.emis}</p>
+                    <p><strong>College Code:</strong> ${user.college_code}</p>
+                `;
+            } catch (error) {
+                console.error('Error fetching user details:', error);
+                // Handle error scenario here
+            }
+        }
+
+        // Call the fetchUserDetails function when the page loads
+        window.onload = fetchUserDetails;
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* General Styles */
+        body {
+            background-image: url('b.jpg'); /* Replace 'b.jpg' with the actual image path */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0; 
+            padding: 0;
+        }
+
+        header {
+            background-color: #002366; /* Royal Blue */
+            color:gold;
+            padding:10px;
+        }
+
+        header h1 {
+            margin: 0;
+           
+            font-size: 36px;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Centered Text Section */
+        .cls1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            color: black;
+            margin-top:250px;
+            text-align: center;
+        }
+
+        .cls1 h3 {
+            margin: 5px 0;
+            letter-spacing: 2px;
+        }
+
+        /* Login Button Section */
+        .b1 {
+            display: flex; 
+            justify-content: center; 
+            margin-top:30px;
+            gap: 20px;
+        }
+
+        .login-button {
+            background-color: #FFD700; /* Gold */
+            color: #000000;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 28px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-width: 160px;
+            border: none;
+        }
+
+        .login-button:hover {
+            background-color: black;
+            color: gold;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .cls1 {
+                font-size: 35px;
+                margin-top: 150px;
+            }
+
+            .login-button {
+                font-size: 24px;
+                padding: 12px 25px;
+                min-width: 140px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cls1 {
+                font-size: 28px;
+                margin-top: 100px;
+            }
+
+            .login-button {
+                font-size: 20px;
+                padding: 10px 20px;
+                min-width: 120px;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Alumni Association</h1>
+        </div>
+    </header>
+
+    <!-- Centered Text -->
+    <section class="cls1">
+        <h3>Association</h3>
+        <h3>LOGIN AS</h3>
+    </section>
+
+    <!-- Login Buttons -->
+    <div class="b1">
+        <a href="file:///C:/Users/hp/OneDrive/Documents/SIHproject/sp/sportal-final/alumni.html" class="login-button">STUDENT</a>
+        <a href="l.html" class="login-button">ALUMNI</a>
+    </div>
+</body>
+</html>
