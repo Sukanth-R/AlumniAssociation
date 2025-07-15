@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Association - About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #002366; /* Royal Blue */
+        }
+
+        .logo {
+            margin-right: 40px;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #FFD700; /* Gold */
+        }
+
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #002366;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .navbar li {
+            flex: 1;
+        }
+
+        .navbar li a, .dropbtn {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar li a:hover, .dropdown:hover .dropbtn {
+            background-color: #FFD700; /* Gold */
+            color: #002366;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #273c64; /* Royal Blue */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #FFD700; /* Gold */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #001a4d; /* Darker Royal Blue */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .login-button {
+            background-color: #FFD700; /* Gold */
+            color: #002366;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            padding: 14px 16px;
+        }
+
+        .login-button:hover {
+            background-color: #002366;
+            color: #FFD700;
+        }
+
+        .header {
+            background-color: #002366; /* Royal Blue */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            font-size: 22px;
+            color: #002366; /* Royal Blue */
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .patron {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .patron img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .patron-details {
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .navbar li {
+                flex: 100%;
+            }
+
+            .navbar {
+                flex-direction: column;
+            }
+
+            .patron {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .patron img {
+                margin: 0 0 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Alumni Portal</h1>
+            </div>
+            <nav>
+                <ul class="navbar">
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Connect</a>
+                        <div class="dropdown-content">
+                            <a href="#">Alumni Albums</a>
+                            <a href="mentor-program.html">Alumni Mentor Program</a>
+                            <a href="http://localhost:3000/jobb.html">Jobs</a>
+                            <a href="http://localhost:3001/intern.html">Internship</a>
+                            <a href="stories.html">Stories</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Events</a>
+                        <div class="dropdown-content">
+                            <a href="event.html">All Events</a>
+                            <a href="event_calender.html">Calendar of Events</a>
+                            <a href="reu.html">Reunions</a>
+                            <a href="specialweb.html">Special Webinars</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Others</a>
+                        <div class="dropdown-content">
+                            <a href="about.html">About the Association</a>
+                            <a href="alumini_needs.html">Help</a>
+                            <a href="#">Photo Gallery</a>
+                            <a href="Donation.html">Donation Portal</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="alumini_portal1.html" class="login-button">HOME</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Page Content -->
+    <div class="header">
+        <h1>Welcome to the Alumni Association</h1>
+    </div>
+    
+    <div class="content">
+        <div class="section">
+            <h2>About Us</h2>
+            <p>Welcome to the Alumni Association! Our mission is to foster a lifelong connection between our alumni and the institution. We achieve this by organizing various events and activities, maintaining an active alumni network, and providing opportunities for continued engagement with the college and its current students.</p>
+            <p>Our alumni are known as "Techians" – a title that binds us all in a unique and lasting identity. As Techians, we carry forward the values, spirit, and tradition of our institution wherever we go. The Alumni Association exists to support and nurture this bond through meaningful connections, events, and services.</p>
+        </div>
+
+        <div class="section">
+            <h2>Patrons of the Alumni Association</h2>
+            <!-- Founder Patron -->
+            <div class="patron">
+                <img src="founder-patron.jpg" alt="Founder Patron">
+                <div class="patron-details">
+                    <p><strong>Founder Patron:</strong> Prof. G. R. Damodaran</p>
+                    <p><strong>Designation:</strong> Former Principal</p>
+                    <p><strong>Degree:</strong> M.Tech, PhD</p>
+                </div>
+            </div>
+            <!-- Chief Patron -->
+            <div class="patron">
+                <img src="chief-patron.jpg" alt="Chief Patron">
+                <div class="patron-details">
+                    <p><strong>Chief Patron:</strong> Dr. A. P. J. Abdul Kalam</p>
+                    <p><strong>Designation:</strong> Former President of India</p>
+                    <p><strong>Degree:</strong> B.Sc, Aerospace Engineering</p>
+                </div>
+            </div>
+            <!-- Add more patrons similarly -->
+        </div>
+
+        <div class="section">
+            <h2>Office Bearers</h2>
+            <p>Details of the current office bearers of the Alumni Association:</p>
+            <ul>
+                <li>President: Dr. S. Ananthanarayanan, PhD</li>
+                <li>Vice-President: Ms. Meena Krishnan, MBA</li>
+                <li>Secretary: Mr. Ravi Chandran, M.Tech</li>
+                <li>Treasurer: Mrs. Sunitha Menon, CA</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Council Members</h2>
+            <p>Our council members play a pivotal role in guiding the association:</p>
+            <ul>
+                <li>Member 1: Prof. Shankar Rao, M.E.</li>
+                <li>Member 2: Dr. Anita Sharma, PhD</li>
+                <li>Member 3: Mr. Rajiv Kapoor, MBA</li>
+                <!-- Add more members as needed -->
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Past Office Bearers</h2>
+            <p>We honor the contributions of our past office bearers who have shaped the association:</p>
+            <ul>
+                <li>Past President: Dr. Ram Mohan, PhD (2016-2020)</li>
+                <li>Past Secretary: Ms. Latha Iyer, M.Com (2014-2018)</li>
+                <!-- Add more past office bearers as needed -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

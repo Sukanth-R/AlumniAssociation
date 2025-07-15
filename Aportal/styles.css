@@ -1,0 +1,168 @@
+/* Base styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header and Navbar styles */
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #002366; /* Royal Blue */
+}
+
+.logo {
+    margin-right: 40px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #FFD700; /* Gold */
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #002366;
+    overflow: hidden;
+    display: flex;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar li a:hover, .dropdown:hover .dropbtn {
+    background-color: #FFD700; /* Gold */
+    color: #002366;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #002366; /* Royal Blue */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #FFD700; /* Gold */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dropdown-content a:hover {
+    background-color: #001a4d; /* Darker shade of Royal Blue */
+    color: #FFD700; /* Keeps text gold on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.login-button {
+    background-color: #FFD700; /* Gold */
+    color: #002366;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    padding: 14px 16px;
+}
+
+.login-button:hover {
+    background-color: #002366;
+    color: #FFD700;
+}
+
+/* Leaderboard and Points Info styles */
+.leaderboard-section {
+    display: flex;
+    padding: 20px;
+    background-color: #e0e0e0;
+    justify-content: space-around;
+}
+
+.leaderboard, .points-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.leaderboard h2, .points-info h2 {
+    color: #002366;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#leaderboardChart {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.points-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.points-info th, .points-info td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.points-info th {
+    background-color: #002366;
+    color: #FFD700;
+}
+
+.points-info td {
+    background-color: #f4f4f4;
+    color: #002366;
+}
+
+/* Top Alumni Cards styles */
+.top-alumni-cards {
+    padding: 20px;
+    text-align: center;
+}
+
+.top-alumni-cards h2 {
+    color: #002366;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #FFD700; /* Gold */
+    color: #002366;
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}

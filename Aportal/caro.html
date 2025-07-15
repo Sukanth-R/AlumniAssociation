@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alumni Album</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet"
+    />
+    <style>
+        /* Global Styles */
+        body {
+            font-family: "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #002366; /* Royal Blue */
+        }
+
+        .logo {
+            margin-right: 40px;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #FFD700; /* Gold */
+        }
+
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #002366;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .navbar li {
+            float: left;
+        }
+
+        .navbar li a, .dropbtn {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar li a:hover, .dropdown:hover .dropbtn {
+            background-color: #FFD700; /* Gold */
+            color: #002366;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #273c64; /* Royal Blue */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #FFD700; /* Gold */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #001a4d; /* Darker shade of Royal Blue */
+            color: #FFD700; /* Keeps text gold on hover */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .login-button {
+            background-color: #FFD700; /* Gold */
+            color: #002366;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            padding: 14px 16px;
+        }
+
+        .login-button:hover {
+            background-color: #002366;
+            color: #FFD700;
+        }
+
+        /* Page-specific Styles */
+        .header {
+            background-color: #002366; /* Royal Blue */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .album-container {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .batch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .batch-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .batch-card:hover {
+            transform: scale(1.05);
+        }
+
+        .batch-card h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+            color: #002366; /* Royal Blue */
+        }
+
+        .batch-card p {
+            margin: 5px 0;
+            color: #777;
+        }
+
+        .admin-controls {
+            display: none; /* Only shown to admins */
+            margin-top: 20px;
+        }
+
+        .admin-controls button {
+            background-color: #FFD700; /* Gold */
+            color: #002366; /* Royal Blue */
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar {
+                flex-direction: column;
+            }
+
+            .batch-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar from Alumni Portal -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Alumni Portal</h1>
+            </div>
+            <nav>
+                <ul class="navbar">
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Connect</a>
+                        <div class="dropdown-content">
+                            <a href="caro.html">Alumni Albums</a>
+                            <a href="mentor-program.html">Alumni Mentor Program</a>
+                            <a href="jobs.html">Jobs</a>
+                            <a href="intern.html">Internship</a>
+                            <a href="stories.html">Stories</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Events</a>
+                        <div class="dropdown-content">
+                            <a href="event.html">All Events</a>
+                            <a href="event_calender.html">Calendar of Events</a>
+                            <a href="reu.html">Reunions</a>
+                            <a href="special_web.html">Special Webinars</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Others</a>
+                        <div class="dropdown-content">
+                            <a href="about.html">About the Association</a>
+                            <a href="alumini_needs.html">Alumni Needs</a>
+                            <a href="photos.html">Photo Gallery</a>
+                            <a href="Donation.html">Donation Portal</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="alumini_portal1.html" class="login-button">HOME</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Album Content -->
+    <div class="header">
+        <h1>Alumni Album</h1>
+    </div>
+    <div class="album-container">
+        <div class="batch-grid">
+            <!-- Batch Card 2023 -->
+            <div class="batch-card" onclick="location.href='animate.html'">
+                <h2>Batch of 2023</h2>
+                <p>Click to View Photos &amp; Details</p>
+            </div>
+            <!-- Add more Batch Cards as needed -->
+            <div class="batch-card" onclick="location.href='animate.html'">
+                <h2>Batch of 2022</h2>
+                <p>Click to View Photos &amp; Details</p>
+            </div>
+        </div>
+
+        <!-- Admin Controls (Shown only to Admins) -->
+        <div class="admin-controls">
+            <button onclick="location.href='animate.html'">Edit Album</button>
+        </div>
+    </div>
+
+    <script>
+        // Simulating admin access
+        const isAdmin = true; // Change to false to simulate non-admin view
+
+        if (isAdmin) {
+            document.querySelector('.admin-controls').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

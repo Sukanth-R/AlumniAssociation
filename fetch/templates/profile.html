@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Profile Details</title>
+    <style>
+        body {
+            background-color: royalblue;
+            color: gold;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 24px;
+            color: royalblue;
+        }
+        p {
+            font-size: 16px;
+            color: #666;
+        }
+        .detail {
+            margin-bottom: 10px;
+            color: royalblue;
+        }
+        .profile-picture {
+            margin-bottom: 20px;
+        }
+        .profile-picture img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid gold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>{{ profile_name }}</h1>
+    <div class="detail"><strong>Title:</strong> {{ title }}</div>
+    <div class="detail"><strong>Description:</strong> {{ description }}</div>
+    <div class="detail"><strong>Profile Summary:</strong> {{ profile_summary }}</div>
+</div>
+
+</body>
+</html>

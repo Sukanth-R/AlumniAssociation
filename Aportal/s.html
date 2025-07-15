@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="s1.css">
+    <style>
+        .cls1{
+            background-color: #002750;
+            padding:15px;
+            font-style:normal;
+        }
+        body {
+            background-image: url("i.jpg");
+            background-color:#ffffff;
+            color: gold;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .signup-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color:rgb(255, 229, 80);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            margin-bottom:50px;
+        }
+        h2 {
+            color:#002750;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color:#002750;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        a{
+            text-decoration: none;
+        }
+        p{
+            color:#002750;
+        }
+        button{
+            padding:10px;
+            border-radius: 7px;
+            background-color: #002750;
+            color:gold;
+            font-size:20px;
+        }
+        button:hover{
+            background-color: #ccc;
+            color:#002750
+        }
+    </style>
+</head>
+<body>
+    <div class="cls1">
+        <h1>Alumni Association</h1>
+    </div>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signup-form" action="signup.php" method="POST">
+            <input type="text" name="name" placeholder="Name" required><br>
+            <input type="text" name="dept" placeholder="Department" required><br>
+            <input type="text" name="year" placeholder="Graduation Year" required><br>
+            <input type="email" name="email" placeholder="Email" required><br>
+            <input type="text" name="linkedin" placeholder="LinkedIn Profile Link"><br>
+            <input type="text" name="mobile" placeholder="Mobile Number" required><br>
+            <input type="text" name="emis" placeholder="EMIS Number" required><br>
+            <input type="text" name="college_code" placeholder="College Code" required><br>
+            <input type="password" name="password" placeholder="Enter password" required><br>
+            <input type="password" name="password" placeholder="Confirm password" required><br>
+            <button class="btn" type="submit" formaction="http://localhost:7000/insert">Sign up</button>
+
+        </form>
+        <p>Already have an account? <a href="l.html">Login</a></p>
+    </div>
+</body>
+</html>

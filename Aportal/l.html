@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="s1.css">
+    <style>
+        .cls1{
+            background-color: #002750;
+            padding:20px;
+            font-style: normal;
+        }
+        body {
+            background-color: rgb(255, 255, 255);
+            color:gold;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .login-container {
+            max-width: 400px;
+            padding: 20px;
+            background-color:rgb(255, 229, 80);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 100px;
+        }
+        h2 {
+            color:#002750;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color:#002750;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        p{
+            color:#002750;
+        }
+        a{
+            text-decoration: none;
+        }
+        button{
+            padding:10px;
+            border-radius: 7px;
+            background-color: #002750;
+            color:gold;
+            font-size:20px;
+        }
+        button:hover{
+            background-color: #ccc;
+            color:#002750
+        }
+    </style>
+</head>
+<body>
+    <div class="cls1">
+        <h1>Alumni Association</h1>
+    </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form" method="POST">
+            <input type="email" name="email" placeholder="Email" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <button type="submit" formaction="http://localhost:7000/login">Login</button>
+        </form>
+        <p>Don't have an account? <a href="s.html">Sign Up</a></p>
+    </div>
+</body>
+</html>
